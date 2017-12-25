@@ -1,25 +1,13 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+ionic3的简单演示项目。
+部分页面效果：
+[主页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/home.png)
 
-## How to use this template
-
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
-
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+[次页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/second.png)
+执行以下命令运行项目：
 
 ```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myTabs tabs
-```
-
-Then, to run it, cd into `myTabs` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+$ npm install
+$ ionic serve
 ```
 
 Substitute ios for android if not on a Mac.
