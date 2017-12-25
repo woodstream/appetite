@@ -1,0 +1,76 @@
+<ion-header class="primary-bg" no-border>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only color="light" (click)="onShowPopupMenu()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      RECIPE ARCHIVE
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="light" (click)="onShowSideMenu()">
+        <ion-icon name="md-menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment mode="md" [(ngModel)]="vm.selectedSegment">
+      <ion-segment-button value="one">
+        DESSERT
+        <div class="bolder-sm"></div>
+      </ion-segment-button>
+      <ion-segment-button value="two">
+        DRINKS
+        <div class="bolder-sm"></div>
+      </ion-segment-button>
+      <ion-segment-button value="three">
+        EINKORN
+        <div class="bolder-sm"></div>
+      </ion-segment-button>
+      <ion-segment-button value="four">
+        LIFESTYLE
+        <div class="bolder-sm"></div>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [hidden]="vm.selectedSegment != 'one'" class="wheel">
+    <!-- <ion-slides centeredSlides="true" slidesPerView="2" initialSlide="1" zoom="false"  *ngIf="vm.dessertSlides && vm.dessertSlides.length>0">
+      <ion-slide *ngFor="let item of vm.dessertSlides">
+        <img [src]="item.src" />
+      </ion-slide>
+    </ion-slides>      -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let item of vm.dessertSlides">
+          <div class="slide-zoom">
+            <img data-src="{{item.src}}" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div text-center *ngFor="let item of vm.dessertList" padding-left padding-right>
+      <h5>
+        <strong>{{item.title}}</strong>
+      </h5>
+      <p>{{item.desc}}</p>
+      <img [src]="item.src" style="height: 140px; width: 100%;" />
+    </div>
+  </div>
+  <div [hidden]="vm.selectedSegment !='two'">
+    <div text-center *ngFor="let item of dessertList">
+      <h5>{{item.title}}</h5>
+      <p>{{item.desc}}</p>
+      <img [src]="item.src" style="height: 140px; width: 100%;" />
+    </div>
+  </div>
+  <div [hidden]="vm.selectedSegment != 'three'">
+    三
+  </div>
+  <div [hidden]="vm.selectedSegment != 'four'">
+    四
+  </div>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-segment mode="md" [(ngModel)]="vm.selectedSegment">
+      <ion-segment-button value="one">
+        EXPLAIN
+        <div class="bolder-sm"></div>
+      </ion-segment-button>
+      <ion-segment-button value="two">
+        GROUP CHAT
+        <div class="bolder-sm"></div>
+      </ion-segment-button>
+      <ion-segment-button value="three">
+        CONTACTS
+        <div class="bolder-sm"></div>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of vm.chatList" tappable (click)="onNext(item)">
+      <ion-avatar item-left>
+        <img src="./assets/imgs/to-user.jpg">
+      </ion-avatar>
+      <h2>{{item.friendName}}</h2>
+      <p>{{item.message}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

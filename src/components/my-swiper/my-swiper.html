@@ -1,0 +1,10 @@
+<!-- Generated template for the MySwiperComponent component -->
+<div [ngClass]="cssName">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let item of source">
+        <img data-src="{{item.src}}" class="swiper-lazy">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<ion-header no-border class="primary-bg">
+  <ion-navbar>
+    <ion-title color="light">APPETITE</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div *ngFor="let item of frendNews">
+      <!-- 发布人信息 -->
+      <ion-item>
+        <ion-avatar item-start>
+          <img data-src="{{item.headImg}}" onerror="assets/imgs/girl1.jpg"/>
+        </ion-avatar>
+        <h2><strong><span color="dark">{{item.name}}</span></strong></h2>
+        <ion-note item-right>{{item.createTime}}</ion-note>
+      </ion-item>
+      <!-- 视频播放器 -->
+      <vg-player class="video-container" *ngIf="item.type == 1; else elseBlock">
+        <vg-overlay-play></vg-overlay-play>
+        <vg-buffering></vg-buffering>
+        <vg-controls>
+          <vg-play-pause></vg-play-pause>
+          <vg-playback-button></vg-playback-button>
+
+          <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+          <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+          <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+          <vg-mute></vg-mute>
+          <vg-volume></vg-volume>
+          <vg-fullscreen></vg-fullscreen>
+        </vg-controls>
+        <!-- <div class="fullscreen-bg" [style.background]="item.background">
+          <video #myMedia [vgMedia]="myMedia" class="video-js vjs-default-skin vjs-fluid vjs-poster" height="400" width="600" preload="auto" poster="../assets/imgs/cover.png"
+            crossorigin playsinline webkit-playsinline>
+            <source *ngFor="let cItem of item.medias" src="{{cItem.src}}" type="video/mp4">
+          </video>
+        </div> -->
+        <div>
+          <video #myMedia [vgMedia]="myMedia" class="video-js vjs-default-skin vjs-fluid vjs-poster" height="400" preload="auto" 
+          poster="{{item.cover}}"
+            crossorigin playsinline webkit-playsinline>
+            <source *ngFor="let cItem of item.medias" src="{{cItem.src}}" type="video/mp4">
+          </video>
+        </div>
+      </vg-player>
+      <!-- 画廊组件 -->
+      <ng-template #elseBlock>
+        <my-swiper [source]="item.medias" cssName="near-join"></my-swiper>
+      </ng-template>
+      <p padding-left padding-right>{{item.content}}</p>
+      <!-- 按钮组 -->
+      <div class="item-block">
+        <div>
+          <button ion-button clear icon-left small outline (click)="onTest()">
+            <ion-icon name="heart" ></ion-icon>
+            <div>{{item.favorites}}</div>
+          </button>
+          <button ion-button clear icon-left small>
+            <ion-icon name="text-outline"></ion-icon>
+            <div>{{item.comments}}</div>
+          </button>
+        </div>
+        <button ion-button clear icon-only small item-right>
+            <ion-icon name="more"></ion-icon>
+        </button>
+      </div>
+      <!-- 分隔符 -->
+      <div class="item-divider-sm"></div>
+    </div>
+  </ion-list>
+</ion-content>

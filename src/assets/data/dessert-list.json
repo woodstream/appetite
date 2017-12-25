@@ -1,0 +1,12 @@
+{
+  "success": "true",
+  "result": [{
+    "title": "DIPPED APRICOTS",
+    "desc": "BY RENEE",
+    "src": "../assets/imgs/foods/1.jpg"
+  }, {
+    "title": "DIPPED DESSERT",
+    "desc": "BY AMY HINE",
+    "src": "../assets/imgs/foods/2.jpg"
+  }]
+}

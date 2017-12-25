@@ -1,0 +1,75 @@
+<ion-header no-border color="primary">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only color="gray">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      GASTRONOME
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="gray">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div padding text-center>
+    <ion-avatar>
+      <img [src]="user.profileImage">
+    </ion-avatar>
+    <h3>
+      <strong>{{user.name}}</strong>
+    </h3>
+    <p>{{user.description}}</p>
+  </div>
+  <ion-row text-center>
+    <ion-col col-4>
+      <span>{{user.works}}</span>
+      <p>WORKS</p>
+    </ion-col>
+    <ion-col col-4>
+      <span>{{user.followers}}</span>
+      <p>FOLLOWERS</p>
+    </ion-col>
+    <ion-col col-4>
+      <span>{{user.following}}</span>
+      <p>FOLLOWING</p>
+    </ion-col>
+  </ion-row>
+  <div id="posts">
+    <ion-card>
+
+    </ion-card>
+  </div>
+
+  <ion-item-group>
+    <ion-item-divider color="light">Me</ion-item-divider>
+    <button ion-item>
+      <ion-icon name="chatbubbles" color="light-green"></ion-icon>
+      Leave me a message
+    </button>
+    <button ion-item>
+      <ion-icon name="heart" color="light-red"></ion-icon>
+      My favorite
+    </button>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light">System</ion-item-divider>
+    <button ion-item (click)="onInvite()">
+      <ion-icon name="people" color="light-blue"></ion-icon>
+      Invite friends
+    </button>
+    <button ion-item>
+      <ion-icon name="mail" color="light-yellow"></ion-icon>
+      System message
+      <ion-badge *ngIf="vm && vm.msgNum>0" item-right color="danger">{{vm.msgNum}}</ion-badge>
+    </button>
+    <button ion-item>
+      <ion-icon name="settings" color="light-green" navPush="SettingPage"></ion-icon>
+      Setting
+    </button>
+  </ion-item-group>
+</ion-content>

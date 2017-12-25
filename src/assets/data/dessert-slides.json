@@ -1,0 +1,12 @@
+{
+  "success": "true",
+  "result": [{
+    "src": "../assets/imgs/foods/1.jpg"
+  }, {
+    "src": "../assets/imgs/foods/2.jpg"
+  }, {
+    "src": "../assets/imgs/foods/3.jpg"
+  }, {
+    "src": "../assets/imgs/foods/4.jpg"
+  }]
+}

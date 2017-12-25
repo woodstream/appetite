@@ -1,0 +1,29 @@
+page-home {
+    .swiper-slide img {
+        height: 120px;
+    }
+
+    .video-js.vjs-poster{
+        // -webkit-background-size: 100% 100%;
+        // -moz-background-size: 100% 100%;
+        // -o-background-size: 100% 100%;
+        // background-size: 100% 100%;
+        height:100%;
+        width:100%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .fullscreen-bg{
+        height:100%;
+        width:100%;
+        background-size:cover !important;
+    }
+
+    ion-note{
+        font-size: small;
+        font-weight: 600;
+    }
+}
