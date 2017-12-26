@@ -1,5 +1,9 @@
 ###ionic3的简单演示项目。
+
+博客文章在：https://www.jianshu.com/nb/17518194
+
 ###部分页面效果：
+
 ![主页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/home.png)
 
 ![次页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/second.png)
@@ -10,6 +14,4 @@
 $ npm install
 $ ionic serve
 ```
-
-Substitute ios for android if not on a Mac.
 
