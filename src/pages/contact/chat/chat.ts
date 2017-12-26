@@ -19,7 +19,7 @@ export class ChatPage {
     showEmojiPicker = false;
 
     constructor(public navParams: NavParams,
-        public chatService: ChatProvider,
+        public chatProvider: ChatProvider,
         public events: Events, private fileProvider: FileProvider) {
 
 
@@ -44,7 +44,7 @@ export class ChatPage {
 
     ionViewDidLoad() {
         // Get mock user information
-        this.chatService.getUserInfo()
+        this.chatProvider.getUserInfo()
             .then((res) => {
                 this.user = res;
                 //get message list
@@ -80,7 +80,7 @@ export class ChatPage {
      */
     getMsg() {
         // Get mock message list
-        return this.chatService
+        return this.chatProvider
             .getMsgList()
             .then((res: any) => {
                 this.msgList = res.result;
@@ -118,7 +118,7 @@ export class ChatPage {
             this.messageInput.setFocus();
         }
 
-        this.chatService.sendMsg(newMsg)
+        this.chatProvider.sendMsg(newMsg)
             .then(() => {
                 let index = this.getMsgIndexById(id);
                 if (index !== -1) {

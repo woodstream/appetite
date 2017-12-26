@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Events } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import { HttpProvider } from '../common/http';
-import { Promise } from 'core-js/library/web/timers';
 declare let socket: any;
 
 
@@ -72,7 +71,7 @@ export class ChatProvider {
             name: 'Luff',
             avatar: '../assets/imgs/user.jpg'
         };
-        return new Promise(resolve => resolve(userInfo));
+        return Promise.resolve(userInfo);
     }
     //
     //让浏览器滚动条保持在最低部
