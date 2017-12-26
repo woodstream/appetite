@@ -33,6 +33,7 @@ import { CacheProvider } from '../providers/common/cache';
 import { ChatProvider } from '../providers/chat/chat';
 import { HttpProvider } from '../providers/common/http';
 import { EmojiProvider } from '../providers/common/emoji';
+import { AuthProvider } from '../providers/common/auth';
 //
 import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
@@ -114,7 +115,8 @@ import { ModalFromLeftEnter, ModalFromLeftLeave, ModalFromTopEnter, ModalFromTop
     AboutProvider,
     FileProvider,
     WechatProvider,
-    UtilProvider
+    UtilProvider,
+    AuthProvider
   ]
 })
 export class AppModule {

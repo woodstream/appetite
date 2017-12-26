@@ -1,3 +1,4 @@
+import { AuthProvider } from './../../providers/common/auth';
 import { HttpProvider } from './../../providers/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NavController, NavParams } from 'ionic-angular';
@@ -24,9 +25,10 @@ export class LoginPage {
     'assets/imgs/background/background-3.jpg',
     'assets/imgs/background/background-4.jpg'
   ];
-  public loginForm: any;
-
-  constructor(public formBuilder: FormBuilder, private navCtrl: NavController, private httpProvider: HttpProvider) {
+  loginForm: any;
+  submitted = false;
+  constructor(public formBuilder: FormBuilder, private navCtrl: NavController, 
+    private httpProvider: HttpProvider, private authProvider: AuthProvider) {
     this.loginForm = formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.compose([Validators.minLength(6),
@@ -43,18 +45,18 @@ export class LoginPage {
   }
 
   doLogin() {
-    this.navCtrl.push(TabsPage);
-    // if (!this.loginForm.valid) {
-    //   console.log('Invalid or empty data');
-    // } else {
-    //   const userEmail = this.loginForm.value.email;
-    //   const userPassword = this.loginForm.value.password;
+    this.submitted = true;
+    if (!this.loginForm.valid) {
+      console.log('Invalid or empty data');
+    } else {
+      const userEmail = this.loginForm.value.email;
+      const userPassword = this.loginForm.value.password;
 
-    //   console.log('user data', userEmail, userPassword);
-    // this.authProvider.login('gz001', '123456').then(resp => {
-    //   console.log(resp);
-    // });
-    // }
+      console.log('user data', userEmail, userPassword);
+      this.authProvider.login('gz001', '123456').then(resp => {
+        this.navCtrl.push(TabsPage);
+      });
+    }
   }
 
 }

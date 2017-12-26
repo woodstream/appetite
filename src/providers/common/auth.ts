@@ -19,13 +19,14 @@ export class AuthProvider {
    * 用户登录
    */
   login(username, password){
-    let url = "/admin/user/UserHandler.ashx?type=login&r=" + Math.random();
+    let url = "/login";
     let data = {
         Memcode: username,
         PWD: password,
         IpAddr: ''
     };
-    return this.httpProvider.post(url, data);
+    // return this.httpProvider.post(url, data);
+    return Promise.resolve({result: true});
   }
 
 }

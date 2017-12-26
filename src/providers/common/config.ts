@@ -29,7 +29,7 @@ export class ConfigProvider {
   static getApiHost(){
       return ConfigProvider.getDomainInfo().domain + "";
   }
- b: any= new Headers();
+
   static defaultHeaders = new Headers({'Content-Type': 'application/json', 'Accept': 'application/json'});
   static formHeaders = new Headers({'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'Accept': 'application/json'});
   static uploadHeasers = new Headers({'Content-Type': 'multipart/form-data'});

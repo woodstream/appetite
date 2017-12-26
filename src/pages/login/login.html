@@ -13,13 +13,19 @@
           APPETITE
       </strong>
     </h1>
-    <form (submit)="doLogin()">
+    <form (submit)="doLogin()" [formGroup]="loginForm" novalidate>
       <ion-item>
-        <ion-input type="email" placeholder="User ID"></ion-input>
+        <ion-input type="email" placeholder="User ID" formControlName="email" autocapitalize="off" clearInput="true"></ion-input>
       </ion-item>
+      <p [hidden]="loginForm.controls.email.valid || !submitted">
+          用户名(邮箱)输入有误
+      </p>
       <ion-item>
-        <ion-input type="password" placeholder="PASSWORD"></ion-input>
+        <ion-input type="password" placeholder="PASSWORD" formControlName="password"></ion-input>
       </ion-item>
+      <p [hidden]="loginForm.controls.password.valid || !submitted">
+          密码必须6位或以上
+      </p>
       <button ion-button margin color="danger" width="200">Login</button>
       <p (click)="openResetPassword()">
         <span class="footer-text">Forget password?</span>
