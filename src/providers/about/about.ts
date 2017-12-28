@@ -13,14 +13,14 @@ export class AboutProvider {
    * 获取甜点轮播图片
    */
   getDessertSlides(){
-    return this.httpProvider.get("../assets/data/dessert-slides.json", false);
+    return this.httpProvider.get("assets/data/dessert-slides.json", false);
   }
 
   /**
    * 获取甜点列表
    */
   getDessertList(){
-    return this.httpProvider.get("../assets/data/dessert-list.json", false);
+    return this.httpProvider.get("assets/data/dessert-list.json", false);
   }
 
   getPage(url: string){

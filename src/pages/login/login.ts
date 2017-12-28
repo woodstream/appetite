@@ -1,3 +1,4 @@
+import { UtilProvider } from './../../providers/common/util';
 import { AuthProvider } from './../../providers/common/auth';
 import { HttpProvider } from './../../providers/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -28,7 +29,8 @@ export class LoginPage {
   loginForm: any;
   submitted = false;
   constructor(public formBuilder: FormBuilder, private navCtrl: NavController, 
-    private httpProvider: HttpProvider, private authProvider: AuthProvider) {
+    private httpProvider: HttpProvider, private authProvider: AuthProvider,
+  private utilProvider: UtilProvider) {
     this.loginForm = formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.compose([Validators.minLength(6),
@@ -47,6 +49,7 @@ export class LoginPage {
   doLogin() {
     this.submitted = true;
     if (!this.loginForm.valid) {
+      this.utilProvider.error('Invalid or empty data');
       console.log('Invalid or empty data');
     } else {
       const userEmail = this.loginForm.value.email;

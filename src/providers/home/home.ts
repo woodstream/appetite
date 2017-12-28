@@ -17,6 +17,6 @@ export class HomeProvider {
 
   getFriendNews(){
     //第二个参数为false表示使用相对路径
-    return this.httpProvider.get("../assets/data/friend-news.json", false);
+    return this.httpProvider.get("assets/data/friend-news.json", false);
   }
 }

@@ -7,7 +7,6 @@ import { Keyboard } from '@ionic-native/keyboard';
 
 import Swiper from 'swiper';
 
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -15,7 +14,6 @@ import Swiper from 'swiper';
 export class HomePage {
 
   @ViewChildren('myMedia') mediaSouce: any;
-  @ViewChild('inputToFocus') inputToFocus;
   frendNews: any[] = [];
   constructor(public navCtrl: NavController, private cacheProvider: CacheProvider, 
     private cd: ChangeDetectorRef, private homeProvider: HomeProvider,
@@ -24,10 +22,10 @@ export class HomePage {
   }
 
   ionViewDidLoad(){
-    setTimeout(() => {
-      this.keyboard.show();
-      // this.inputToFocus.setFocus();
-    },2000)
+    // setTimeout(() => {
+    //   this.keyboard.show();
+    //   this.inputToFocus.setFocus();
+    // },2000)
     this.getFriendNews();
   }
 
@@ -44,7 +42,7 @@ export class HomePage {
         // this.initVideo();
       }else{
         //如提示框等错误提示
-        console.log(res.msg);
+        this.utilProvider.error(res.msg);
       }
     });
   }

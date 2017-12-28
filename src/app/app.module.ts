@@ -72,7 +72,6 @@ import { ModalFromLeftEnter, ModalFromLeftLeave, ModalFromTopEnter, ModalFromTop
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
-      mode: 'ios',
       backButtonText: '',
       tabsHideOnSubPages: true,
       scrollAssist: true,

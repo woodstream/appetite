@@ -43,7 +43,7 @@ export class ChatProvider {
             messageId: Date.now().toString(),
             userId: '210000198410281948',
             userName: 'Hancock',
-            userAvatar: '../assets/imgs/to-user.jpg',
+            userAvatar: 'assets/imgs/to-user.jpg',
             toUserId: '140000198202211138',
             time: Date.now(),
             message: msg.message,
@@ -57,7 +57,7 @@ export class ChatProvider {
     }
 
     getMsgList() {
-        const msgListUrl = '../assets/data/msg-list.json';
+        const msgListUrl = 'assets/data/msg-list.json';
         return this.httpProvider.get(msgListUrl, false);
     }
 
@@ -69,7 +69,7 @@ export class ChatProvider {
         const userInfo: UserInfo = {
             id: '140000198202211138',
             name: 'Luff',
-            avatar: '../assets/imgs/user.jpg'
+            avatar: 'assets/imgs/user.jpg'
         };
         return Promise.resolve(userInfo);
     }
