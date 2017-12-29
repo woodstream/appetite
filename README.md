@@ -14,6 +14,8 @@
 
 ### 部分页面效果：
 
+![登录](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/login.png)
+
 ![主页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/home.png)
 
 ![次页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/second.png)
