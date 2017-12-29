@@ -1,4 +1,5 @@
 ###ionic3的简单演示项目。
+支持angular5及以下
 
 博客文章在：https://www.jianshu.com/nb/17518194
 
@@ -10,11 +11,11 @@
 
 ###部分页面效果：
 
-![主页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/home.png)
+![主页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/home.png =100)
 
-![次页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/second.png)
+![次页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/second.png =100px)
 
-![聊天](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/chat.png)
+![聊天](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/chat.png =100)
 
 ![个人](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/person.png)
 
@@ -24,4 +25,6 @@
 $ npm install
 $ ionic serve
 ```
+###登录
+账号密码非空，任意密码大于等于6位
 
