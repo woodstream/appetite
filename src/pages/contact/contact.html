@@ -1,15 +1,15 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-segment mode="md" [(ngModel)]="vm.selectedSegment">
-      <ion-segment-button value="one">
+      <ion-segment-button value="s0" (ionSelect)="goToSlide(0)">
         EXPLAIN
         <div class="bolder-sm"></div>
       </ion-segment-button>
-      <ion-segment-button value="two">
+      <ion-segment-button value="s1" (ionSelect)="goToSlide(1)">
         GROUP CHAT
         <div class="bolder-sm"></div>
       </ion-segment-button>
-      <ion-segment-button value="three">
+      <ion-segment-button value="s2" (ionSelect)="goToSlide(2)">
         CONTACTS
         <div class="bolder-sm"></div>
       </ion-segment-button>
@@ -18,13 +18,39 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of vm.chatList" tappable (click)="onNext(item)">
-      <ion-avatar item-left>
-        <img src="./assets/imgs/to-user.jpg">
-      </ion-avatar>
-      <h2>{{item.friendName}}</h2>
-      <p>{{item.message}}</p>
-    </ion-item>
-  </ion-list>
+  <ion-slides centeredSlides="false" zoom="false" (ionSlideDidChange)="onSlideDidChange()">
+    <ion-slide>
+      <ion-list>
+        <ion-item *ngFor="let item of vm.explainList" tappable (click)="onChat(item)">
+          <ion-avatar item-left>
+            <img src="{{item.header}}">
+          </ion-avatar>
+          <h2>{{item.friendName}}</h2>
+          <p>{{item.message}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <ion-list>
+        <ion-item *ngFor="let item of vm.contactList" tappable (click)="onChat(item)">
+          <ion-avatar item-left>
+            <img src="{{item.header}}">
+          </ion-avatar>
+          <h2>{{item.friendName}}</h2>
+          <p>{{item.message}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <ion-list>
+        <ion-item *ngFor="let item of vm.contactList" tappable (click)="onChat(item)">
+          <ion-avatar item-left>
+            <img src="{{item.header}}">
+          </ion-avatar>
+          <h2>{{item.friendName}}</h2>
+          <p>{{item.message}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

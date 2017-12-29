@@ -2,4 +2,16 @@ page-contact {
    .toolbar-ios .segment-button{
        max-width: 120px;
    }
+
+   .swiper-slide{
+        -webkit-box-align: normal !important;
+        -webkit-align-items: normal !important;
+        -ms-flex-align: normal !important;
+        align-items: normal !important;
+
+        .slide-zoom{
+            overflow-y: auto;
+        }
+
+    }
 }

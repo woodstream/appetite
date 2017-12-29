@@ -56,6 +56,16 @@ export class ChatProvider {
         }, Math.random() * 1800)
     }
 
+    getExplainList(){
+        const url = 'assets/data/explain-list.json';
+        return this.httpProvider.get(url, false);
+    }
+
+    getContactList(){
+        const url = 'assets/data/contact-list.json';
+        return this.httpProvider.get(url, false);
+    }
+
     getMsgList() {
         const msgListUrl = 'assets/data/msg-list.json';
         return this.httpProvider.get(msgListUrl, false);
