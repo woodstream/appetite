@@ -1,4 +1,5 @@
-###ionic3的简单演示项目。
+##ionic3的简单演示项目。
+
 支持angular5及以下
 
 博客文章在：https://www.jianshu.com/nb/17518194
@@ -9,22 +10,23 @@
 
 其中聊天页面用了别人开源项目的内容，虽然觉得它有点复杂，但我懒也只简化了部分。
 
-###部分页面效果：
+##部分页面效果：
 
-![主页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/home.png =100)
+![主页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/home.png){:height="50%" width="50%"}
 
-![次页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/second.png =100px)
+![次页](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/second.png){:height="50%" width="50%"}
 
-![聊天](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/chat.png =100)
+![聊天](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/chat.png){:height="50%" width="50%"}
 
-![个人](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/person.png)
+![个人](https://github.com/woodstream/appetite/blob/master/src/assets/imgs/screenshot/person.png){:height="50%" width="50%"}
 
-###执行以下命令运行项目：
+##执行以下命令运行项目：
 
 ```bash
 $ npm install
 $ ionic serve
 ```
-###登录
+##登录
+
 账号密码非空，任意密码大于等于6位
 
