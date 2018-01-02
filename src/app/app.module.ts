@@ -75,6 +75,7 @@ import { ModalFromLeftEnter, ModalFromLeftLeave, ModalFromTopEnter, ModalFromTop
       backButtonText: '',
       tabsHideOnSubPages: true,
       scrollAssist: true,
+      mode: 'ios',
       autoFocusAssist: 'delay'
     }),
     IonicStorageModule.forRoot(),
