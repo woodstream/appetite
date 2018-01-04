@@ -1,0 +1,10 @@
+
+src/assets/imgs/screenshot/.DS_Store
+.DS_Store
+src/assets/.DS_Store
+src/assets/imgs/.DS_Store
+node_modules
+platforms
+www
+.sourcemaps
+.vscode

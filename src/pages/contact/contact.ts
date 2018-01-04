@@ -30,6 +30,9 @@ export class ContactPage {
   constructor(private navCtrl: NavController, private chatProvider: ChatProvider) {
   }
 
+  /**
+   * slide切换处理
+   */
   onSlideDidChange() {
     let index: number = this.slides.getActiveIndex();
     if(index >= 0 && index <=2){

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import { Headers } from '@angular/http';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ConfigProvider {
@@ -30,9 +30,9 @@ export class ConfigProvider {
       return ConfigProvider.getDomainInfo().domain + "";
   }
 
-  static defaultHeaders = new Headers({'Content-Type': 'application/json', 'Accept': 'application/json'});
-  static formHeaders = new Headers({'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'Accept': 'application/json'});
-  static uploadHeasers = new Headers({'Content-Type': 'multipart/form-data'});
+  static defaultHeaders = new HttpHeaders({'Content-Type': 'application/json', 'Accept': 'application/json'});
+  static formHeaders = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'Accept': 'application/json'});
+  static uploadHeasers = new HttpHeaders({'Content-Type': 'multipart/form-data'});
   //
   static defaultOptions: any = {headers: ConfigProvider.defaultHeaders};
   static formOptions: any = {headers: ConfigProvider.formHeaders};
